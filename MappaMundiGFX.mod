@@ -3,6 +3,7 @@ path="mod/MappaMundiGFX/"
 dependencies={
 	"Mappa Mundi - Github Version"
 	"Mappa Mundi"
+	"Mappa Mundi - Steam Version"
 }
 tags={
 	"Graphics"
