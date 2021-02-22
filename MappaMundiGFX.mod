@@ -1,5 +1,6 @@
 name="Mappa Mundi Graphics Submod"
 path="mod/MappaMundiGFX/"
+picture="thumbnail.png"
 dependencies={
 	"Mappa Mundi - Github Version"
 	"Mappa Mundi"
