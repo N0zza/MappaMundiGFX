@@ -472,7 +472,7 @@ PixelShader =
 
 BlendState BlendState
 {
-	BlendEnable = yes
+	BlendEnable = no
 	AlphaTest = no
 	WriteMask = "RED|GREEN|BLUE|ALPHA"
 }
