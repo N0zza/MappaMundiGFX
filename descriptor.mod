@@ -10,4 +10,4 @@ tags={
 	"Graphics"
 	"Map"
 }
-supported_version="1.12.*"
+supported_version="1.13.*"
