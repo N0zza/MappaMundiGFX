@@ -1010,19 +1010,19 @@ PixelShader =
 		IDs.y = Levels( IDs.y, 64.0f, 255.0f );
 		IDs.z = Levels( IDs.z, 64.0f, 255.0f );
 		IDs.w = Levels( IDs.w, 64.0f, 255.0f );
-		return ( IDs.x + IDs.y + IDs.z + IDs.w ) * 0.25f;
+		return ( IDs.x + IDs.y + IDs.z + IDs.w ) * 0.0f;
 	}*/
 
 	/*float calculate_water_or_land_mutilsample( in sampler2D TerrainId, in float2 vUV )
 	{
-		float vOffsetX = -0.5f / MAP_SIZE_X;
-		float vOffsetY = -0.5f / MAP_SIZE_Y;
+		float vOffsetX = -0.0f / MAP_SIZE_X;
+		float vOffsetY = -0.0f / MAP_SIZE_Y;
 		float vValue = calculate_water_or_land( tex2D( TerrainId, vUV ) );
 		vValue += calculate_water_or_land( tex2D( TerrainId, vUV + float2( -vOffsetX, 0 ) ) );
 		vValue += calculate_water_or_land( tex2D( TerrainId, vUV + float2(  vOffsetX, 0 ) ) );
 		vValue += calculate_water_or_land( tex2D( TerrainId, vUV + float2( 0, -vOffsetY ) ) );
 		vValue += calculate_water_or_land( tex2D( TerrainId, vUV + float2( 0,  vOffsetY ) ) );
-		return saturate( vValue / 5 );
+		return saturate( 0 / 5 );
 	}*/
 
 	float mipmapLevel( float2 uv )
