@@ -845,7 +845,7 @@ PixelShader =
 		float FX = tex2D( gbTex2, uv ).b;
 		vStrength *= lerp( lerp( 0.45f, 1.0f, 1.0f - FX ), 1.0f, ( sin( vGlobalTime * PulseSpeedMult ) + 1.0f ) / 2 );
 
-		float vFullWidth = 5.25f / 255.0f;//lerp( 5.25f, 0.01f, FX ) / 255.f;
+		float vFullWidth = 0.0f / 255.0f;//lerp( 0.0f, 0.01f, FX ) / 255.f;
 		float vGradientWidth = 0.5f / 255.0f;//lerp( 0.5f, 0.1f, FX ) / 255.f;
 
 		// Grab multisampled border color
@@ -1010,19 +1010,19 @@ PixelShader =
 		IDs.y = Levels( IDs.y, 64.0f, 255.0f );
 		IDs.z = Levels( IDs.z, 64.0f, 255.0f );
 		IDs.w = Levels( IDs.w, 64.0f, 255.0f );
-		return ( IDs.x + IDs.y + IDs.z + IDs.w ) * 0.0f;
+		return ( IDs.x + IDs.y + IDs.z + IDs.w ) * 0.25f;
 	}*/
 
 	/*float calculate_water_or_land_mutilsample( in sampler2D TerrainId, in float2 vUV )
 	{
-		float vOffsetX = -0.0f / MAP_SIZE_X;
-		float vOffsetY = -0.0f / MAP_SIZE_Y;
+		float vOffsetX = -0.5f / MAP_SIZE_X;
+		float vOffsetY = -0.5f / MAP_SIZE_Y;
 		float vValue = calculate_water_or_land( tex2D( TerrainId, vUV ) );
 		vValue += calculate_water_or_land( tex2D( TerrainId, vUV + float2( -vOffsetX, 0 ) ) );
 		vValue += calculate_water_or_land( tex2D( TerrainId, vUV + float2(  vOffsetX, 0 ) ) );
 		vValue += calculate_water_or_land( tex2D( TerrainId, vUV + float2( 0, -vOffsetY ) ) );
 		vValue += calculate_water_or_land( tex2D( TerrainId, vUV + float2( 0,  vOffsetY ) ) );
-		return saturate( 0 / 5 );
+		return saturate( vValue / 5 );
 	}*/
 
 	float mipmapLevel( float2 uv )
@@ -1112,7 +1112,7 @@ PixelShader =
 
 		float vScale = 1.7f;
 		Bout = ( 2*lean2.xy - 1 ) * vScale;
-		Mout = float3( lean2.zw, ( 2*lean1.w - 1 ) * 0.5) * vScale * vScale;
+		Mout = float3( lean2.zw, 2*lean1.w - 1 ) * vScale * vScale;
 	}
 
 	void SampleBlendLEAN( float t, float2 uv1, float2 uv2, out float2 Bout, out float3 Mout, in sampler2D Lean1, in sampler2D Lean2 )
