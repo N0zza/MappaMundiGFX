@@ -54,9 +54,9 @@ static const float TERRAIN_TILE_FREQ 			= 128.0f;
 static const float MAP_NUM_TILES 				= 4.0f;
 static const float TEXELS_PER_TILE 				= 512.0f;
 static const float ATLAS_TEXEL_POW2_EXPONENT	= 11.0f;
-static const float TERRAIN_WATER_CLIP_HEIGHT    = 3.0f;
-static const float TERRAIN_WATER_CLIP_CAM_HI	= 700.0f;
-static const float TERRAIN_WATER_CLIP_CAM_LO	= 50.0f;
+static const float TERRAIN_WATER_CLIP_HEIGHT    = 0.0f;
+static const float TERRAIN_WATER_CLIP_CAM_HI	= 1.0f;
+static const float TERRAIN_WATER_CLIP_CAM_LO	= 0.0f;
 
 static const float MUD_TILING 					= 0.07;
 static const float MUD_NORMAL_CUTOFF 			= 10.982;
@@ -128,7 +128,7 @@ static const float 	TREE_ROUGHNESS = 0.6f;
 // ------------------    WATER          -------------------------
 // --------------------------------------------------------------
 
-//static const float  WATER_TILE					= 4.0f;
+//static const float  WATER_TILE					= 0.0f;
 static const float  WATER_TIME_SCALE			= 1.0f / 50.0f;
 static const float  WATER_HEIGHT = 9.5f;
 static const float  WATER_HEIGHT_RECP = 1.0f / WATER_HEIGHT;
@@ -198,7 +198,7 @@ static const float GB_CAM_MAX_FILLING_CLAMP = 1.0f; // 0 to 1 value for clamping
 static const float GB_THRESHOLD = 0.05f; // interpolation time
 static const float GB_THRESHOLD2 = 0.25f; // interpolation time
 //static const float3 GB_OUTLINE_COLOR = float3( 0.0f, 0.0f, 0.0f );
-static const float GB_OUTLINE_CUTOFF_SEA = 10.0f; // Magic number to balance cutoff on edges without neighbor (over Sea)
+static const float GB_OUTLINE_CUTOFF_SEA = 0.990f; // Magic number to balance cutoff on edges without neighbor (over Sea)
 static const float GB_OPACITY_NEAR = 1.0f; // Transparency when camera is near
 static const float GB_OPACITY_FAR = 1.0f;  // Transparency when camera is far
 static const float BORDER_NIGHT_DESATURATION_MAX = 0.2f; // how much border colors can get desaturated at night. 1.0f is full grey
@@ -223,7 +223,7 @@ static const float SEC_MAP_TILE = 6000.0f;
 static const float MAP_ARROW_SEL_BLINK_SPEED = 5.5f;
 static const float MAP_ARROW_SEL_BLINK_RANGE = 0.7f;
 static const float MAP_ARROW_NORMALS_STR_TERR = 0.0125f;
-static const float MAP_ARROW_NORMALS_STR_WATER = 0.08f;
+static const float MAP_ARROW_NORMALS_STR_WATER = 0.00f;
 
 // --------------------------------------------------------------
 // ------------------    PARTICLES   ----------------------------

@@ -56,6 +56,15 @@ PixelShader =
 			AddressU = "Wrap"
 			AddressV = "Wrap"
 		}
+		WaterRefraction =
+		{
+			Index = 5
+			MagFilter = "Linear"
+			MinFilter = "Linear"
+			MipFilter = "Linear"
+			AddressU = "Clamp"
+			AddressV = "Clamp"
+		}
 		IceDiffuse =
 		{
 			Index = 6
@@ -108,6 +117,24 @@ PixelShader =
 			MagFilter = "Point"
 			MinFilter = "Point"
 			MipFilter = "Point"
+			AddressU = "Clamp"
+			AddressV = "Clamp"
+		}
+		GradientBorderChannel1 =
+		{
+			Index = 12
+			MagFilter = "Linear"
+			MinFilter = "Linear"
+			MipFilter = "Linear"
+			AddressU = "Clamp"
+			AddressV = "Clamp"
+		}
+		GradientBorderChannel2 =
+		{
+			Index = 13
+			MagFilter = "Linear"
+			MinFilter = "Linear"
+			MipFilter = "Linear"
 			AddressU = "Clamp"
 			AddressV = "Clamp"
 		}
@@ -243,7 +270,7 @@ PixelShader =
 		{
 			//return float4( 0, 0, 1, 1 );
 			float waterHeight = MultiSampleTexX( HeightTexture, Input.uv ) / ( 95.7f / 255.0f );
-			float waterShore = saturate( ( waterHeight - 0.954f ) * 0.0f );
+			float waterShore = saturate( ( waterHeight - 0.954f ) * 25.0f );
 		
 			float2 B;
 			float3 M;
@@ -373,6 +400,8 @@ BlendState BlendState
 {
 	BlendEnable = yes
 	AlphaTest = no
+	SourceBlend = "src_alpha"
+	DestBlend = "inv_src_alpha"
 	WriteMask = "RED|GREEN|BLUE"
 }
 
